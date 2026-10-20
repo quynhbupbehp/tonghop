@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tổng Hợp Link</title>
+    <title>Kim Chi Mobile - Trang Chủ Quản Lý</title>
     <!-- Font Awesome cho icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -47,40 +47,21 @@
             padding-top: 10px;
         }
 
-        /* 1. Hiệu ứng tiêu đề Kim Chi Mobile: Neon Pulse & Nhấp nhô Floating */
+        /* Tiêu đề tĩnh, không hiệu ứng */
         .brand-title {
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--brand-pink);
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
             letter-spacing: 1px;
             margin-bottom: 16px;
             display: inline-block;
-            animation: pulseNeon 3s infinite alternate ease-in-out, floatTitle 4s infinite ease-in-out;
         }
 
-        @keyframes pulseNeon {
-            0% {
-                text-shadow: 0 0 10px rgba(236, 72, 153, 0.4), 0 0 20px rgba(236, 72, 153, 0.2);
-                color: #ec4899;
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(236, 72, 153, 0.9), 0 0 35px rgba(236, 72, 153, 0.6), 0 0 50px rgba(236, 72, 153, 0.4);
-                color: #f472b6;
-            }
-        }
-
-        @keyframes floatTitle {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-6px);
-            }
-        }
-
-        /* 2. Bảng thông tin Thời gian & Thời tiết có hiệu ứng viền sáng và trượt từ trên xuống */
+        /* Bảng thông tin Thời gian & Thời tiết tĩnh, không hiệu ứng */
         .info-dashboard {
-            background: linear-gradient(135deg, rgba(21, 30, 50, 0.9), rgba(15, 23, 42, 0.9));
+            background: rgba(21, 30, 50, 0.9);
+            border: 1px solid var(--card-border);
             border-radius: var(--border-radius);
             padding: 22px 28px;
             display: flex;
@@ -89,71 +70,19 @@
             gap: 12px;
             max-width: 580px;
             margin: 0 auto;
-            box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-            animation: fadeSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Viền sáng LED xoay chuyển động quanh khung */
-        .info-dashboard::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, rgba(236, 72, 153, 0.3), rgba(34, 197, 94, 0.3), rgba(56, 189, 248, 0.3), transparent 60%);
-            animation: rotateBorder 8s linear infinite;
-            z-index: -2;
-        }
-
-        .info-dashboard::after {
-            content: '';
-            position: absolute;
-            inset: 1px;
-            background: rgba(21, 30, 50, 0.92);
-            border-radius: calc(var(--border-radius) - 1px);
-            z-index: -1;
-        }
-
-        @keyframes rotateBorder {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes fadeSlideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 3. Hiệu ứng đồng hồ nhịp đập ánh sáng */
+        /* Đồng hồ số hiển thị tĩnh */
         .clock-display {
             font-size: 2.86rem;
             font-weight: 800;
             color: var(--brand-green);
             font-family: 'Courier New', Courier, monospace;
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
             letter-spacing: 3px;
             line-height: 1;
-            animation: clockGlow 2s infinite alternate ease-in-out;
-        }
-
-        @keyframes clockGlow {
-            0% {
-                text-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
-            }
-            100% {
-                text-shadow: 0 0 18px rgba(34, 197, 94, 0.8), 0 0 30px rgba(34, 197, 94, 0.4);
-            }
         }
 
         .date-display {
@@ -175,7 +104,7 @@
             font-weight: 500;
         }
 
-        /* Thời tiết nhấp nháy nhẹ */
+        /* Khung thời tiết tĩnh */
         .weather-display {
             font-size: 0.9rem;
             color: #facc15;
@@ -186,15 +115,7 @@
             background: rgba(250, 204, 21, 0.1);
             padding: 5px 16px;
             border-radius: 20px;
-            border: 1px solid rgba(250, 204, 21, 0.25);
-            box-shadow: 0 0 10px rgba(250, 204, 21, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .weather-display:hover {
-            background: rgba(250, 204, 21, 0.18);
-            border-color: rgba(250, 204, 21, 0.5);
-            box-shadow: 0 0 15px rgba(250, 204, 21, 0.25);
+            border: 1px solid rgba(250, 204, 21, 0.2);
         }
 
         /* Lưới 2 cột chuẩn theme gốc */
@@ -463,7 +384,7 @@
         <header>
             <h1 class="brand-title">Kim Chi Mobile</h1>
 
-            <!-- Bảng thông tin Thời gian & Thời tiết có hiệu ứng viền chuyển động -->
+            <!-- Bảng thông tin Thời gian & Thời tiết (Giao diện tĩnh) -->
             <div class="info-dashboard">
                 <div class="clock-display" id="clock">00:00:00</div>
                 <div class="date-display">
@@ -486,7 +407,7 @@
                     <div class="card-icon icon-blue"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="card-content">
                         <h3>Phần Mềm</h3>
-                        <span>Kho công cụ & tiện ích</span>
+                        <span>Truy cập kho công cụ & tiện ích</span>
                     </div>
                 </a>
                 <div class="card-actions">
@@ -505,7 +426,7 @@
                     <div class="card-icon icon-green"><i class="fa-solid fa-tags"></i></div>
                     <div class="card-content">
                         <h3>Báo Giá</h3>
-                        <span>Bảng Giá Thay Màn + Pin ...</span>
+                        <span>Bảng giá dịch vụ sửa chữa chi tiết</span>
                     </div>
                 </a>
                 <div class="card-actions">
@@ -524,7 +445,7 @@
                     <div class="card-icon icon-purple"><i class="fa-solid fa-microchip"></i></div>
                     <div class="card-content">
                         <h3>Testpoint</h3>
-                        <span>Tra cứu điểm Testpoint</span>
+                        <span>Sơ đồ tra cứu điểm Testpoint</span>
                     </div>
                 </a>
                 <div class="card-actions">
@@ -581,7 +502,7 @@
                     <div class="card-icon icon-pink"><i class="fa-solid fa-unlock-keyhole"></i></div>
                     <div class="card-content">
                         <h3>Rom Vượt Quyền</h3>
-                        <span>Kho Rom Vượt Quyền , Ko Cần Unlockboot</span>
+                        <span>Thư mục tổng hợp Rom Bypass / Unlock</span>
                     </div>
                 </a>
                 <div class="card-actions">
@@ -600,7 +521,7 @@
                     <div class="card-icon icon-red"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <div class="card-content">
                         <h3>LINK TOOL</h3>
-                        <span>Tổng hợp Driver & Tool Mobile</span>
+                        <span>Tổng hợp Driver & Tool hệ thống</span>
                     </div>
                 </a>
                 <div class="card-actions">
@@ -619,7 +540,7 @@
                     <div class="card-icon icon-indigo"><i class="fa-brands fa-apple"></i></div>
                     <div class="card-content">
                         <h3>ULTRA & ID APPLE</h3>
-                        <span>Coppy Số Từ Ảnh - Cho Thằng Lười</span>
+                        <span>Quản lý tài khoản & công cụ Apple</span>
                     </div>
                 </a>
                 <div class="card-actions">
